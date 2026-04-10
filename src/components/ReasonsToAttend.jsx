@@ -1,10 +1,10 @@
 import "./styles/ReasonsToAttend.scss";
-import ReasonsImg from "../assets/images/reasons_to_attend_image.png";
-import { ReactComponent as PracticalSvg } from "../assets/svg/practical-svg.svg";
-import { ReactComponent as ValuableSvg } from "../assets/svg/valuable-svg.svg";
-import { ReactComponent as AheadSvg } from "../assets/svg/ahead-svg.svg";
+
+import ReasonsImg from "../assets/images/reasons_to_attend_image.jpg";
+
 import BlockReveal from "../reusable-components/BlockReveal";
 import AnimatedText from "../reusable-components/AnimatedText";
+
 import { REASONS_TO_ATTEND as reasonsData } from "../helpers/details";
 
 export default function ReasonsToAttend() {

@@ -12,6 +12,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: rgba(246, 246, 246, 1);
   @include mixins.flex-center;
 
   .overlay {

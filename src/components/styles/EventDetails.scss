@@ -17,11 +17,12 @@
 }
 
 .event_details-image {
-  padding: 80px 0 120px;
+  margin: 80px 0 120px;
   border-radius: 24px;
   width: 100%;
   aspect-ratio: 1.4 / 1;
   height: fit-content;
+  background-color: rgba(246, 246, 246, 1);
 
   img {
     width: 100%;
@@ -85,7 +86,7 @@
   }
 
   .event_details-image {
-    padding: 64px 0 64px;
+    margin: 64px 0 64px;
     border-radius: 8px;
     aspect-ratio: 3 / 4;
 

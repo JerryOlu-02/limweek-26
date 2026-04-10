@@ -7,6 +7,7 @@ import Header from "../reusable-components/Header";
 
 import useSectionContext from "../helpers/useSectionContext";
 import { useRef, useEffect } from "react";
+
 import BlockReveal from "../reusable-components/BlockReveal";
 import RevealText from "../reusable-components/RevealText";
 
