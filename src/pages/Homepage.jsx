@@ -19,6 +19,7 @@ import EventSchedule from "../components/EventSchedule";
 import PaymentDetails from "../components/PaymentDetails";
 import Moments from "../components/Moments";
 import BePart from "../components/BePart";
+import Preloader from "../reusable-components/Preloader";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -31,7 +32,8 @@ export default function () {
   const lenisRef = useRef();
   const containerRef = useRef(null);
 
-  const [showNav, setShowNav] = useState(false);
+  const [isLayoutReady, setIsLayoutReady] = useState(false);
+  const [isScrollLocked, setIsScrollLocked] = useState(true);
 
   useEffect(() => {
     function update(time) {
@@ -54,14 +56,22 @@ export default function () {
     };
   }, []);
 
+  useEffect(() => {
+    if (!lenisRef.current?.lenis) return;
+
+    if (isScrollLocked) {
+      lenisRef.current.lenis.stop(); // Lock scroll
+    } else {
+      lenisRef.current.lenis.start(); // Unlock scroll
+
+      // Tell ScrollTrigger to recalculate everything now that the screen is visible
+      ScrollTrigger.refresh();
+    }
+  }, [isScrollLocked]);
+
   useGSAP(
     () => {
-      const navTrigger = ScrollTrigger.create({
-        trigger: ".hero-section",
-        start: "bottom top",
-        onEnter: () => setShowNav(true),
-        onLeaveBack: () => setShowNav(false),
-      });
+      if (!isLayoutReady) return;
 
       const sections = gsap.utils.toArray(".section");
 
@@ -98,18 +108,22 @@ export default function () {
 
       return () => {
         triggers.forEach((t) => t?.kill());
-        navTrigger?.kill();
       };
     },
-    { scope: containerRef },
+    { scope: containerRef, dependencies: [isLayoutReady] },
   );
 
   return (
     <>
       <ReactLenis root options={{ autoRaf: false }} ref={lenisRef} />
 
+      <Preloader
+        onReadyToReveal={() => setIsLayoutReady((prev) => (prev ? prev : true))}
+        onComplete={() => setIsScrollLocked((prev) => (prev ? false : true))}
+      />
+
       <main ref={containerRef} className="main">
-        <NavBar isVisible={showNav} />
+        <NavBar />
 
         <Hero />
 

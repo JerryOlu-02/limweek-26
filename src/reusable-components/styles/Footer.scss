@@ -16,7 +16,7 @@
   padding: 56px 0;
   border-bottom: 1px solid rgba(78, 85, 93, 1);
 
-  p {
+  .item {
     color: rgba(255, 255, 255, 0.8);
     width: 100%;
     font-weight: 400;
@@ -55,7 +55,7 @@
     height: fit-content;
   }
 
-  p {
+  .item {
     color: rgba(255, 255, 255, 1);
     font-weight: 300;
     font-size: 24px;
@@ -117,7 +117,7 @@
   }
 
   .footer_bottom-left {
-    p {
+    .item {
       font-size: 20px;
     }
   }

@@ -4,12 +4,35 @@ import "./styles/Navbar.scss";
 import { ReactComponent as LogoSvg } from "../assets/svg/logo.svg";
 import { ReactComponent as LogoDarkSvg } from "../assets/svg/logo-dark.svg";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import useSectionContext from "../helpers/useSectionContext.js";
 
 import HoverText from "./HoverText.jsx";
 
-export default function NavBar({ isVisible }) {
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger);
+
+export default function NavBar() {
+  const navRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useGSAP(
+    () => {
+      if (!navRef.current) return;
+
+      ScrollTrigger.create({
+        trigger: ".hero-section",
+        start: "bottom top",
+        onEnter: () => setIsVisible(true),
+        onLeaveBack: () => setIsVisible(false),
+      });
+    },
+    { dependencies: [] },
+  );
+
   //State to manage Navbar Content Visibility
   const [isOpen, setIsOpen] = useState(false);
 
@@ -35,7 +58,7 @@ export default function NavBar({ isVisible }) {
   } = useSectionContext();
 
   return (
-    <nav className={`navbar ${isVisible && "sticky"}`}>
+    <nav ref={navRef} className={`navbar ${isVisible && "sticky"}`}>
       <div className="navbar_container">
         <h3 className="logo">{isOpen ? <LogoDarkSvg /> : <LogoSvg />}</h3>
 

@@ -12,59 +12,33 @@ import RevealText from "../reusable-components/RevealText";
 gsap.registerPlugin(useGSAP, SplitText);
 
 export default function Hero() {
-  const containerRef = useRef(null);
-  const descriptionRef = useRef(null);
-
   const spanRef1 = useRef();
   const spanRef2 = useRef();
 
   const splitText1 = useRef();
   const splitText2 = useRef();
 
-  const splitDescription = useRef();
+  const { contextSafe } = useGSAP(
+    () => {
+      document.fonts.ready.then(() => {
+        splitText1.current = SplitText.create(spanRef1.current, {
+          type: "chars",
+          autoSplit: true,
+        });
 
-  const { contextSafe } = useGSAP(() => {
-    document.fonts.ready.then(() => {
-      splitText1.current = SplitText.create(spanRef1.current, {
-        type: "chars",
-        autoSplit: true,
+        splitText2.current = SplitText.create(spanRef2.current, {
+          type: "chars",
+          autoSplit: true,
+        });
       });
 
-      splitText2.current = SplitText.create(spanRef2.current, {
-        type: "chars",
-        autoSplit: true,
-      });
-    });
-
-    // DESCRIPTION ANIMATION
-    if (!containerRef.current || !descriptionRef.current) return;
-
-    document.fonts.ready.then(() => {
-      splitDescription.current = new SplitText(descriptionRef.current, {
-        type: "chars",
-      });
-
-      gsap.set(splitDescription.current.chars, { yPercent: 100 });
-
-      gsap.to(splitDescription.current.chars, {
-        yPercent: 0,
-        stagger: 0.04,
-        duration: 0.5,
-        ease: "back.out(1.2)",
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top 85%", // Triggers when the text is 85% down the screen
-          once: true,
-        },
-      });
-    });
-
-    return () => {
-      splitText1.current?.revert();
-      splitText2.current?.revert();
-      splitDescription.current?.revert();
-    };
-  });
+      return () => {
+        splitText1.current?.revert();
+        splitText2.current?.revert();
+      };
+    },
+    { dependencies: [] },
+  );
 
   const handleMouseOver = contextSafe(() => {
     gsap.to(splitText1.current.chars, {
@@ -111,10 +85,10 @@ export default function Hero() {
           <button
             onMouseOver={handleMouseOver}
             onMouseLeave={handleMouseLeave}
-            link
-            url={
-              "https://tix.africa/lagos-international-maritime-week-limweek-2025"
-            }
+            // link
+            // url={
+            //   "https://tix.africa/lagos-international-maritime-week-limweek-2025"
+            // }
             className="btn"
           >
             <div style={{ overflow: "hidden", lineHeight: 1, height: "18px" }}>

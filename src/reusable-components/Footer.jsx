@@ -23,31 +23,33 @@ export default function Footer() {
   return (
     <section className="section footer">
       <aside className="footer_top">
-        <p>
+        <div className="item">
           <span className="bullet" />
-          <RevealText>8:00 AM – 6:00 PM</RevealText>
-        </p>
 
-        <p>
+          <RevealText>8:00 AM – 6:00 PM</RevealText>
+        </div>
+
+        <div className="item">
           <span className="bullet" />
           <RevealText>Sept 8–9, 2026</RevealText>
-        </p>
+        </div>
 
-        <p>
+        <div className="item">
           <span className="bullet" />
+
           <RevealText>Lagos Oriental Hotel</RevealText>
-        </p>
+        </div>
       </aside>
 
       <aside className="footer_bottom">
         <div className="footer_bottom-left">
           <FooterLogo />
 
-          <p>
+          <div className="item">
             <RevealText start="top 140%">
               From Policy to Practice – Powering Maritime Excellence
             </RevealText>
-          </p>
+          </div>
         </div>
 
         <div className="footer_bottom-right">

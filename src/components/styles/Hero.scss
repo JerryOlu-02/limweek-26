@@ -2,6 +2,8 @@
 @use "../../styles/mixins";
 
 .hero {
+  transform: rotate(0deg);
+
   padding: 64px 16px;
   position: relative;
   width: 100%;
