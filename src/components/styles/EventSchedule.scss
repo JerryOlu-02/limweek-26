@@ -1,0 +1,108 @@
+@use "/src/styles/variables";
+@use "/src/styles/mixins";
+
+.event_schedule-container {
+  background-color: rgba(255, 255, 255, 1);
+  @include mixins.flex-center;
+  padding: 120px 16px;
+}
+
+.event_schedule {
+  max-width: 1272px;
+  width: 100%;
+  @include mixins.flex-column;
+  align-items: center;
+  gap: 80px;
+}
+
+.schedule_list {
+  width: 100%;
+  gap: 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(408px, 408px));
+  place-content: center;
+  // display: flex;
+  // justify-content: space-between;
+}
+
+.schedule_item {
+  @include mixins.flex-column;
+  gap: 32px;
+  padding: 24px 24px 64px;
+  width: 100%;
+  //   min-height: 408px;
+  border-radius: 19px;
+  background-color: rgba(246, 246, 246, 1);
+
+  &:last-of-type {
+    // width: 100%;
+    justify-self: center;
+  }
+}
+
+.schedule_item-content {
+  @include mixins.flex-column;
+  gap: 20px;
+
+  h5 {
+    color: rgba(24, 26, 30, 1);
+    font-family: "Geist", sans-serif;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 36px;
+    letter-spacing: -1%;
+    max-width: 273px;
+  }
+
+  p {
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+
+    strong {
+      font-weight: 600;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .event_schedule-container {
+    padding: 64px 16px;
+  }
+
+  .event_schedule {
+    gap: 48px;
+  }
+
+  .schedule_item {
+    gap: 24px;
+    min-height: 370px;
+    padding: 24px 24px;
+
+    svg {
+      transform: scale(0.9);
+    }
+  }
+
+  .schedule_item-content {
+    h5 {
+      font-size: 28px;
+      line-height: 32px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 25px;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .schedule_list {
+    display: flex;
+    flex-direction: column;
+  }
+}

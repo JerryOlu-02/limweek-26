@@ -1,0 +1,159 @@
+@use "/src/styles/variables";
+@use "/src/styles/mixins";
+
+.event_details-section {
+  min-height: 100%;
+}
+
+.event_details-container {
+  @include mixins.flex-center;
+  padding: 120px 16px;
+}
+
+.event_details {
+  max-width: 1152px;
+  width: 100%;
+  @include mixins.flex-column;
+}
+
+.event_details-image {
+  padding: 80px 0 120px;
+  border-radius: 24px;
+  width: 100%;
+  aspect-ratio: 1.4 / 1;
+  height: fit-content;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 24px;
+    object-position: top top;
+  }
+}
+
+.details {
+  @include mixins.flex-column;
+  gap: 120px;
+}
+
+.details_list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.details_item {
+  @include mixins.flex-column;
+  gap: 32px;
+
+  .line {
+    height: 2px;
+    width: 200px;
+    background-color: rgba(14, 198, 211, 1);
+  }
+}
+
+.details_item-content {
+  @include mixins.flex-column;
+  gap: 16px;
+  text-transform: uppercase;
+  max-width: 429px;
+
+  h4 {
+    color: rgba(230, 231, 233, 1);
+    font-family: var(--header-font);
+    font-weight: 300;
+    font-size: 56px;
+    line-height: 52px;
+    letter-spacing: -4px;
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 26px;
+    letter-spacing: 0px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .event_details-container {
+    padding: 64px 16px;
+  }
+
+  .event_details-image {
+    padding: 64px 0 64px;
+    border-radius: 8px;
+    aspect-ratio: 3 / 4;
+
+    img {
+      object-position: center center;
+      border-radius: 8px;
+    }
+  }
+
+  .details {
+    gap: 80px;
+  }
+
+  .details_list {
+    flex-direction: column;
+    gap: 80px;
+  }
+
+  .details_item {
+    gap: 16px;
+  }
+
+  .details_item-content {
+    gap: 8px;
+
+    h4 {
+      margin-top: 7px;
+      margin-bottom: 4px;
+      font-size: 32px;
+      line-height: 30px;
+      letter-spacing: -2px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .event_details-image {
+    aspect-ratio: 3 / 5;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .event_details {
+    .header-item {
+      .header {
+        h2 {
+          font-size: 44px !important;
+          line-height: 40px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .event_details {
+    .header-item {
+      .header {
+        h2 {
+          font-size: 40px !important;
+          line-height: 40px;
+        }
+      }
+    }
+  }
+}

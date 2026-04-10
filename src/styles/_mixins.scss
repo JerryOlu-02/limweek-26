@@ -23,6 +23,26 @@
   align-items: center;
 }
 
+@mixin caption {
+  @include flex-center;
+  justify-content: flex-start;
+  gap: 7.5px;
+  color: rgba(204, 209, 213, 1);
+  font-weight: 400;
+  font-style: Medium;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: -2%;
+  text-transform: uppercase;
+}
+
+@mixin caption-bullet {
+  width: 8px;
+  height: 8px;
+  border-radius: 100px;
+  background-color: rgba(14, 227, 224, 1);
+}
+
 @mixin padding {
   padding-left: 64px;
   padding-right: 64px;
@@ -32,6 +52,21 @@
   font-size: var(--header-1);
   line-height: var(--line-height-1);
   letter-spacing: var(--letter-spacing-1);
+}
+
+@mixin h2 {
+  font-family: var(--header-font);
+  font-weight: 300;
+  font-size: 80px;
+  line-height: 72px;
+  letter-spacing: -6%;
+}
+
+@mixin body1 {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 0%;
 }
 
 @mixin h3 {

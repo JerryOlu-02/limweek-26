@@ -1,0 +1,160 @@
+@use "/src/styles/variables";
+@use "/src/styles/mixins";
+
+.why_attend {
+  background-color: rgba(255, 255, 255, 1);
+  padding: 120px 18px 85px;
+  @include mixins.flex-column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  gap: 48px;
+}
+
+.why_attend-caption {
+  @include mixins.flex-center;
+  gap: 12px;
+  font-weight: 400;
+  font-style: Medium;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: -2%;
+
+  span {
+    width: 8px;
+    height: 8px;
+    border-radius: 100px;
+    background-color: rgba(14, 227, 224, 1);
+  }
+}
+
+.why_attend-content {
+  @include mixins.flex-column;
+  align-items: center;
+  gap: 24px;
+  max-width: 750px;
+
+  h2 {
+    font-family: var(--header-font);
+    font-weight: 300;
+    font-size: 88px;
+    line-height: 72px;
+    letter-spacing: -6%;
+    color: rgba(10, 14, 40, 1);
+  }
+
+  p {
+    color: rgba(102, 102, 102, 1);
+    font-weight: 400;
+    font-style: Medium;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: -2%;
+  }
+}
+
+.why_attend-image {
+  width: 100%;
+  height: 100vh;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.why_attend-reasons {
+  padding: 85px 18px 120px;
+  @include mixins.flex-center;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.reasons-list {
+  max-width: 1242px;
+  width: 100%;
+  // display: flex;
+  // justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(382px, 1fr));
+  row-gap: 64px;
+  column-gap: 48px;
+}
+
+.reasons-item {
+  @include mixins.flex-column;
+  gap: 32px;
+  // max-width: 382px;
+  width: 100%;
+}
+
+.reasons-item-content {
+  @include mixins.flex-column;
+  gap: 12px;
+  text-transform: uppercase;
+
+  h5 {
+    color: rgba(0, 0, 0, 1);
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0%;
+  }
+
+  p {
+    color: rgba(102, 102, 102, 1);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .why_attend {
+    padding: 64px 18px 48px;
+    gap: 32px;
+  }
+
+  .why_attend-caption {
+    font-size: 16px;
+  }
+
+  .why_attend-content {
+    gap: 20px;
+
+    h2 {
+      font-size: 48px;
+      line-height: 44px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+  }
+
+  .why_attend-reasons {
+    padding: 48px 18px 64px;
+  }
+
+  .reasons-list {
+    flex-direction: column;
+    gap: 64px;
+  }
+
+  .reasons-item {
+    gap: 28px;
+  }
+
+  .reasons-item-content {
+    h5 {
+      font-size: 16px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+}

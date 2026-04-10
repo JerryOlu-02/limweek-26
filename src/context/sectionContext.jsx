@@ -4,41 +4,48 @@ const SectionContext = createContext();
 
 const SectionProvider = function ({ children }) {
   const [aboutRef, setAboutRef] = useState();
-  const [eventRef, setEventRef] = useState();
-  const [benefitRef, setBenefitRef] = useState();
-  const [speakersRef, setSpeakersRef] = useState();
+  // const [eventRef, setEventRef] = useState();
+  const [eventDetailsRef, setEventDetailsRef] = useState();
+  const [scheduleRef, setScheduleRef] = useState();
   const [faqRef, setFaqRef] = useState();
+  const [pricingRef, setPricingRef] = useState();
 
   const activateFaqRef = function (ref) {
     setFaqRef(ref);
   };
 
-  const activateBenefitRef = function (ref) {
-    setBenefitRef(ref);
+  const activateEventDetailsRef = function (ref) {
+    setEventDetailsRef(ref);
   };
 
-  const activateSpeakersRef = function (ref) {
-    setSpeakersRef(ref);
+  const activateScheduleRef = function (ref) {
+    setScheduleRef(ref);
+  };
+
+  const activatePricingRef = function (ref) {
+    setPricingRef(ref);
   };
 
   const activateAboutRef = function (ref) {
     setAboutRef(ref);
   };
-  const activateEventRef = function (ref) {
-    setEventRef(ref);
-  };
+
+  // const activateEventRef = function (ref) {
+  //   setEventRef(ref);
+  // };
 
   const data = {
-    faqRef,
-    benefitRef,
-    speakersRef,
     aboutRef,
-    eventRef,
+    eventDetailsRef,
+    scheduleRef,
+    pricingRef,
+    faqRef,
     activateAboutRef,
+    // activateEventRef,
+    activateEventDetailsRef,
+    activateScheduleRef,
+    activatePricingRef,
     activateFaqRef,
-    activateSpeakersRef,
-    activateBenefitRef,
-    activateEventRef,
   };
 
   return (

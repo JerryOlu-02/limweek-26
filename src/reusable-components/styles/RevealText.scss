@@ -1,0 +1,12 @@
+.scroll_text_container {
+  position: relative;
+  // width: 100%;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  line-height: 1;
+}
+
+.scroll_text {
+  display: inline-block;
+}

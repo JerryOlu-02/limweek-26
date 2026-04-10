@@ -2,11 +2,7 @@ import "./App.scss";
 import Homepage from "./pages/Homepage";
 
 function App() {
-  return (
-    <main className="main">
-      <Homepage />
-    </main>
-  );
+  return <Homepage />;
 }
 
 export default App;

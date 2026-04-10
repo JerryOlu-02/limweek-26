@@ -1,4 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Figtree:ital,wght@0,300..900;1,300..900&family=Outfit:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rubik+Mono+One&display=swap");
+
+@font-face {
+  font-family: "Rubik One Regular";
+  font-style: normal;
+  font-weight: normal;
+  src:
+    local("Rubik One Regular"),
+    url("./assets/fonts/RubikOne-Regular.woff") format("woff");
+}
 
 :root {
   --header-1: 64px;
@@ -9,13 +18,33 @@
 
   --letter-spacing-1: -2%;
   --letter-spacing-3: -2%;
+  --header-font: "Rubik One Regular", monospace;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Figtree", sans-serif;
+  font-family: "Geist Mono", monospace;
+}
+
+.section {
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh);
+  overflow: hidden;
+}
+
+.main-container {
+  width: 100%;
+  height: 100%;
+  transform: rotate(30deg);
+  transform-origin: bottom left;
+  will-change: transform;
 }
 
 @media screen and (max-width: 1050px) {

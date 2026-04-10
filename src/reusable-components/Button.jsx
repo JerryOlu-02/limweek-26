@@ -2,13 +2,13 @@ import "./styles/Button.scss";
 import { ReactComponent as IconUp } from "../assets/svg/arrow-up.svg";
 
 export default function Button({
-  props,
   className,
   children,
   link,
   url,
   mail,
   mailTo,
+  ...props
 }) {
   // This is a reusable button component
   // It can be used in different parts of the application

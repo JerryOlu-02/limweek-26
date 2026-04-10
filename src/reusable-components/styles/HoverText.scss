@@ -1,0 +1,13 @@
+@use "/src/styles/variables";
+@use "/src/styles/mixins";
+
+.text_container {
+  height: var(--text-height);
+  line-height: 1;
+
+  overflow: hidden;
+}
+
+.text {
+  display: block;
+}
