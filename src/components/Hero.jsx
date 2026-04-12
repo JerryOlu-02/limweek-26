@@ -12,6 +12,7 @@ import RevealText from "../reusable-components/RevealText";
 gsap.registerPlugin(useGSAP, SplitText);
 
 export default function Hero() {
+  const containerRef = useRef(null);
   const spanRef1 = useRef();
   const spanRef2 = useRef();
 
@@ -37,7 +38,7 @@ export default function Hero() {
         splitText2.current?.revert();
       };
     },
-    { dependencies: [] },
+    { scope: containerRef, dependencies: [] },
   );
 
   const handleMouseOver = contextSafe(() => {
@@ -69,7 +70,7 @@ export default function Hero() {
   });
 
   return (
-    <section className="section hero-section">
+    <section ref={containerRef} className="section hero-section">
       <div className="hero main-container">
         <div className="hero__content">
           <div className="hero__description">

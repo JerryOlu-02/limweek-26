@@ -25,11 +25,6 @@
   width: 100%;
   @include mixins.flex-column;
   gap: 38px;
-
-  .swiper-wrapper {
-    display: flex;
-    width: max-content;
-  }
 }
 
 .moments-swiper {

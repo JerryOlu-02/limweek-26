@@ -1,4 +1,5 @@
 import "./styles/Moments.scss";
+import "swiper/css";
 
 import Header from "../reusable-components/Header";
 import BlockReveal from "../reusable-components/BlockReveal";

@@ -38,7 +38,7 @@ export default function Preloader({ onReadyToReveal, onComplete }) {
           ease: "power4.inOut",
         });
     },
-    { scope: containerRef },
+    { scope: containerRef, dependencies: [] },
   );
 
   return (
@@ -56,7 +56,7 @@ export default function Preloader({ onReadyToReveal, onComplete }) {
         justifyContent: "center",
         padding: "48px 16px",
         color: "rgba(255, 255, 255, 1)",
-        fontSize: "5rem",
+        fontSize: "4rem",
         fontWeight: "bold",
       }}
     >

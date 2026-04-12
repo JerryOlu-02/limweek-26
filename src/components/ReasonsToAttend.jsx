@@ -1,11 +1,18 @@
+import "swiper/css";
+import "swiper/css/pagination";
 import "./styles/ReasonsToAttend.scss";
 
-import ReasonsImg from "../assets/images/reasons_to_attend_image.jpg";
+import ReasonsImg1 from "../assets/images/reasons-image-2.webp";
+import ReasonsImg2 from "../assets/images/reasons-image-3.webp";
+import ReasonsImg3 from "../assets/images/reasons-image-1.webp";
 
 import BlockReveal from "../reusable-components/BlockReveal";
 import AnimatedText from "../reusable-components/AnimatedText";
 
 import { REASONS_TO_ATTEND as reasonsData } from "../helpers/details";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Mousewheel, Pagination } from "swiper/modules";
 
 export default function ReasonsToAttend() {
   const reasons = reasonsData.map((reason, index) => {
@@ -60,9 +67,38 @@ export default function ReasonsToAttend() {
           </div>
         </aside>
 
-        <aside className="why_attend-image">
-          <img src={ReasonsImg} alt="Reasons to attend visual representation" />
-        </aside>
+        <Swiper
+          pagination={{ clickable: true }}
+          modules={[Pagination, Mousewheel]}
+          mousewheel={{ forceToAxis: true }}
+        >
+          <SwiperSlide>
+            <aside className="why_attend-image">
+              <img
+                src={ReasonsImg1}
+                alt="Reasons to attend visual representation"
+              />
+            </aside>
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <aside className="why_attend-image">
+              <img
+                src={ReasonsImg2}
+                alt="Reasons to attend visual representation"
+              />
+            </aside>
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <aside className="why_attend-image">
+              <img
+                src={ReasonsImg3}
+                alt="Reasons to attend visual representation"
+              />
+            </aside>
+          </SwiperSlide>
+        </Swiper>
 
         <aside className="why_attend-reasons">
           <div className="reasons-list">{reasons}</div>

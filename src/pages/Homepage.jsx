@@ -73,7 +73,7 @@ export default function () {
     () => {
       if (!isLayoutReady) return;
 
-      const sections = gsap.utils.toArray(".section");
+      const sections = gsap.utils.toArray(".section", containerRef.current);
 
       const triggers = [];
 
@@ -101,6 +101,7 @@ export default function () {
           end: "bottom top",
           pin: true,
           pinSpacing: false,
+          refreshPriority: 1,
         });
 
         triggers.push(pinTrigger);
@@ -118,8 +119,8 @@ export default function () {
       <ReactLenis root options={{ autoRaf: false }} ref={lenisRef} />
 
       <Preloader
-        onReadyToReveal={() => setIsLayoutReady((prev) => (prev ? prev : true))}
-        onComplete={() => setIsScrollLocked((prev) => (prev ? false : true))}
+        onReadyToReveal={() => setIsLayoutReady(true)}
+        onComplete={() => setIsScrollLocked(false)}
       />
 
       <main ref={containerRef} className="main">

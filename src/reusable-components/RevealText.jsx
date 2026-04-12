@@ -45,7 +45,7 @@ export default function RevealText({
         split.current?.revert();
       };
     },
-    { dependencies: [children, stagger, start, duration] },
+    { scope: containerRef, dependencies: [children, stagger, start, duration] },
   );
 
   return (
