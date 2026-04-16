@@ -79,8 +79,8 @@ export default function EventSchedule() {
                     colorFinal="rgba(0, 0, 0, 0.6)"
                   >
                     <p>
-                      By Dr. Segun Musa Secretary General African Shipowners
-                      Association.
+                      {/* By Dr. Segun Musa  */}
+                      Secretary General African Shipowners Association.
                     </p>
                   </AnimatedText>
                 </div>

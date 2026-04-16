@@ -69,50 +69,50 @@ export default function () {
     }
   }, [isScrollLocked]);
 
-  useGSAP(
-    () => {
-      if (!isLayoutReady) return;
+  // useGSAP(
+  //   () => {
+  //     if (!isLayoutReady) return;
 
-      const sections = gsap.utils.toArray(".section", containerRef.current);
+  //     const sections = gsap.utils.toArray(".section", containerRef.current);
 
-      const triggers = [];
+  //     const triggers = [];
 
-      sections.forEach((section, index) => {
-        const container = section.querySelector(".main-container");
+  //     sections.forEach((section, index) => {
+  //       const container = section.querySelector(".main-container");
 
-        if (container) {
-          gsap.to(container, {
-            rotation: 0,
-            ease: "none",
-            scrollTrigger: {
-              trigger: section,
-              start: "top bottom",
-              end: "top 20%",
-              scrub: true,
-            },
-          });
-        }
+  //       if (container) {
+  //         gsap.to(container, {
+  //           rotation: 0,
+  //           ease: "none",
+  //           scrollTrigger: {
+  //             trigger: section,
+  //             start: "top bottom",
+  //             end: "top 20%",
+  //             scrub: true,
+  //           },
+  //         });
+  //       }
 
-        if (index == sections.length - 1) return;
+  //       if (index == sections.length - 1) return;
 
-        const pinTrigger = ScrollTrigger.create({
-          trigger: section,
-          start: "bottom bottom",
-          end: "bottom top",
-          pin: true,
-          pinSpacing: false,
-          refreshPriority: 1,
-        });
+  //       const pinTrigger = ScrollTrigger.create({
+  //         trigger: section,
+  //         start: "bottom bottom",
+  //         end: "bottom top",
+  //         pin: true,
+  //         pinSpacing: false,
+  //         refreshPriority: 1,
+  //       });
 
-        triggers.push(pinTrigger);
-      });
+  //       triggers.push(pinTrigger);
+  //     });
 
-      return () => {
-        triggers.forEach((t) => t?.kill());
-      };
-    },
-    { scope: containerRef, dependencies: [isLayoutReady] },
-  );
+  //     return () => {
+  //       triggers.forEach((t) => t?.kill());
+  //     };
+  //   },
+  //   { scope: containerRef, dependencies: [isLayoutReady] },
+  // );
 
   return (
     <>

@@ -16,6 +16,12 @@
   display: flex;
   flex-direction: row;
   gap: 120px;
+
+  .header-item {
+    height: fit-content;
+    position: sticky;
+    top: 120px;
+  }
 }
 
 .faq__list {
@@ -110,6 +116,11 @@
 @media screen and (max-width: 950px) {
   .faqs {
     flex-direction: column;
+
+    .header-item {
+      position: relative;
+      top: 0;
+    }
   }
 }
 

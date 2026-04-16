@@ -4,6 +4,7 @@
 .moments-section {
   position: relative;
   width: 100%;
+  min-height: 100%;
   background-color: rgba(255, 255, 255, 1);
   padding: 120px 0 120px 120px;
 
@@ -80,6 +81,7 @@
     width: 100%;
     background-color: rgba(255, 255, 255, 1);
     padding: 64px 0 64px 16px;
+    // min-height: 100%;
   }
 
   .moments {

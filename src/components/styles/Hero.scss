@@ -2,15 +2,15 @@
 @use "../../styles/mixins";
 
 .hero {
-  transform: rotate(0deg);
+  // transform: rotate(0deg);
 
   padding: 64px 16px;
   position: relative;
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
   background-color: rgba(0, 104, 222, 1);
 
-  background-image: url("/src/assets/images/hero-banner.jpg");
+  background-image: url("/images/hero-banner.jpg");
   background-size: cover;
   background-position-x: 60%;
   background-position-y: center;
@@ -110,7 +110,7 @@
 @media screen and (max-width: 768px) {
   .hero {
     // background-position-x: 60%;
-    background-image: url("../../assets/images/hero-banner-mobile.jpg");
+    background-image: url("/images/hero-banner-mobile.jpg");
 
     .btn {
       width: 100%;

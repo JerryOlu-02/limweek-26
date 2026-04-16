@@ -7,13 +7,15 @@
 }
 
 .be_part-container {
-  padding: 64px 16px;
+  min-height: 100vh;
+  padding: 64px 16px 80px;
   background-image: url("../../assets/images/be-part-bg.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-color: rgba(246, 246, 246, 1);
   @include mixins.flex-center;
+  align-items: flex-end;
 
   .overlay {
     content: "";
@@ -36,7 +38,7 @@
   width: 100%;
   max-width: 1340px;
 
-  padding-bottom: 80px;
+  // padding-bottom: 80px;
   // padding-left: 130px;
 }
 
@@ -65,9 +67,12 @@
 }
 
 @media screen and (max-width: 768px) {
-  .be_part {
-    padding-bottom: 64px;
+  .be_part-container {
+    padding: 64px 16px;
   }
+  // .be_part {
+  //   padding-bottom: 64px;
+  // }
 
   .be_part-content {
     gap: 20px;

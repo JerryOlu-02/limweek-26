@@ -60,39 +60,39 @@ export default function Faqs() {
   });
 
   return (
-    <section className="section faqs-section">
-      <div className="main-container faqs-main-container">
-        <div ref={faqRef} className="faqs">
-          <Header
-            dark={false}
-            caption="FAQs"
-            description="Everything you need to know about LIMWEEK 2026, from registration to participation, in one place."
+    // <section className="section faqs-section">
+    <section className="main-container faqs-main-container">
+      <div ref={faqRef} className="faqs">
+        <Header
+          dark={false}
+          caption="FAQs"
+          description="Everything you need to know about LIMWEEK 2026, from registration to participation, in one place."
+        >
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+            }}
           >
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-              }}
-            >
-              <BlockReveal blockColor="rgba(255, 255, 255, 1)">
-                <h2 style={{ color: "rgba(255, 255, 255, 1)" }}>Your</h2>
-              </BlockReveal>
+            <BlockReveal blockColor="rgba(255, 255, 255, 1)">
+              <h2 style={{ color: "rgba(255, 255, 255, 1)" }}>Your</h2>
+            </BlockReveal>
 
-              <BlockReveal blockColor="rgba(255, 255, 255, 1)" delay={0.3}>
-                <h2 style={{ color: "rgba(255, 255, 255, 1)" }}>Questions,</h2>
-              </BlockReveal>
+            <BlockReveal blockColor="rgba(255, 255, 255, 1)" delay={0.3}>
+              <h2 style={{ color: "rgba(255, 255, 255, 1)" }}>Questions,</h2>
+            </BlockReveal>
 
-              <BlockReveal blockColor="rgba(255, 255, 255, 1)" delay={0.6}>
-                <h2 style={{ color: "rgba(255, 255, 255, 1)" }}>Answered</h2>
-              </BlockReveal>
-            </div>
-          </Header>
+            <BlockReveal blockColor="rgba(255, 255, 255, 1)" delay={0.6}>
+              <h2 style={{ color: "rgba(255, 255, 255, 1)" }}>Answered</h2>
+            </BlockReveal>
+          </div>
+        </Header>
 
-          <aside className="faq__content">
-            <div className="faq__list">{renderFaqs}</div>
-          </aside>
-        </div>
+        <aside className="faq__content">
+          <div className="faq__list">{renderFaqs}</div>
+        </aside>
       </div>
     </section>
+    // </section>
   );
 }
