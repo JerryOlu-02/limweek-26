@@ -98,7 +98,7 @@ export default function NavBar() {
             <Button
               link
               url={
-                "https://tix.africa/lagos-international-maritime-week-limweek-2025"
+                "https://www.tix.africa/discover/lagos-international-maritime-week-limweek-2026"
               }
               className={"btn-nav"}
             >

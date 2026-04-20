@@ -83,13 +83,12 @@ export default function Hero() {
             </RevealText>
           </div>
 
-          <button
+          <a
+            href="https://www.tix.africa/discover/lagos-international-maritime-week-limweek-2026"
+            target="_blank"
+            rel="noreferrer"
             onMouseOver={handleMouseOver}
             onMouseLeave={handleMouseLeave}
-            // link
-            // url={
-            //   "https://tix.africa/lagos-international-maritime-week-limweek-2025"
-            // }
             className="btn"
           >
             <div style={{ overflow: "hidden", lineHeight: 1, height: "18px" }}>
@@ -107,7 +106,7 @@ export default function Hero() {
             </div>
 
             <ArrowUp />
-          </button>
+          </a>
 
           {/* <div className="overlay"></div> */}
         </div>

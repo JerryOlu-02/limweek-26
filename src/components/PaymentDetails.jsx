@@ -109,7 +109,14 @@ export default function PaymentDetails() {
                 </div>
               </div>
 
-              <button className="btn">Pay Now</button>
+              <a
+                href="https://www.tix.africa/discover/lagos-international-maritime-week-limweek-2026"
+                target="_blank"
+                rel="noreferrer"
+                className="btn"
+              >
+                Pay Now
+              </a>
             </div>
           </div>
 
