@@ -169,7 +169,7 @@ export default function PaymentDetails() {
 
                   <p>Account Number:</p>
 
-                  <span>0021637817</span>
+                  <span>3281931024</span>
                 </div>
 
                 <div>

@@ -79,8 +79,9 @@ export default function EventSchedule() {
                     colorFinal="rgba(0, 0, 0, 0.6)"
                   >
                     <p>
+                      To Be Announced
                       {/* By Dr. Segun Musa  */}
-                      Secretary General African Shipowners Association.
+                      {/* Secretary General African Shipowners Association. */}
                     </p>
                   </AnimatedText>
                 </div>
@@ -92,8 +93,8 @@ export default function EventSchedule() {
                 <div className="schedule_item-content">
                   <RevealText start="top 110%" stagger={0.02}>
                     <h5>
-                      Maritime B2B
-                      <br /> Conference
+                      International Maritime Business to Business Conference and
+                      Exhibition
                     </h5>
                   </RevealText>
 

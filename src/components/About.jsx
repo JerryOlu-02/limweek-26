@@ -51,7 +51,11 @@ export default function About() {
               </BlockReveal>
 
               <BlockReveal blockColor="#fff" delay={0.5}>
-                <h2>event</h2>
+                <h2>event in the</h2>
+              </BlockReveal>
+
+              <BlockReveal blockColor="#fff" delay={0.5}>
+                <h2>MARITIME SECTOR</h2>
               </BlockReveal>
             </div>
 
