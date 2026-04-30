@@ -84,7 +84,7 @@ export default function Hero() {
           </div>
 
           <a
-            href="https://www.tix.africa/discover/lagos-international-maritime-week-limweek-2026"
+            href="https://www.tix.africa/discover/lagos-international-zoemaritime-week-limweek-2025"
             target="_blank"
             rel="noreferrer"
             onMouseOver={handleMouseOver}
